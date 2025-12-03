@@ -62,7 +62,7 @@ def load_models():
     # -----------------------------------------------------------
     id_scaler = "1-9muoEzXUPd_TyMKvQSm5_eUVLBQ2PrX"
     id_alcool = "1J3JM5V4DiMelidNnytF4sMKs25GqXYau"
-    id_fumo = "1iIqRaZApGUhc5upi4K22orFA7B1UGny"
+    id_fumo = "1iIqRaZApGUhc5upi4K22orFA7B1UGny-"
     # -----------------------------------------------------------
 
     try:
