@@ -63,20 +63,21 @@ def load_models():
     # -----------------------------------------------------------
 
     try:
-        with st.spinner('Baixando modelos da nuvem (isso pode demorar na primeira vez)...'):
+        with st.spinner('Downloading models from cloud (this may take a while on first run)...'):
             # Baixa os arquivos se não existirem
             download_model_if_not_exists(id_scaler, "model_data/scaler.pkl")
             download_model_if_not_exists(id_alcool, "model_data/modelo_alcool.pkl")
             download_model_if_not_exists(id_fumo, "model_data/modelo_fumo.pkl")
 
-        # Carrega os modelos
-        scaler = joblib.load("model_data/scaler.pkl")
-        modelo_alcool = joblib.load("model_data/modelo_alcool.pkl")
-        modelo_fumo = joblib.load("model_data/modelo_fumo.pkl")
+            # Carrega os modelos
+            scaler = joblib.load("model_data/scaler.pkl")
+            modelo_alcool = joblib.load("model_data/modelo_alcool.pkl")
+            modelo_fumo = joblib.load("model_data/modelo_fumo.pkl")
+        
         return scaler, modelo_alcool, modelo_fumo
         
     except Exception as e:
-        st.error(f"Erro ao carregar modelos: {e}")
+        st.error(f"Error loading models: {e}")
         return None, None, None
 
 scaler, modelo_alcool, modelo_fumo = load_models()
