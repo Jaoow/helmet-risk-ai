@@ -60,9 +60,9 @@ def load_models():
     # -----------------------------------------------------------
     # ⚠️ IDS DOS ARQUIVOS DO DRIVE
     # -----------------------------------------------------------
-    id_scaler = "1-9muoEzXUPd_TyMKvQSm5_eUVLBQ2PrX"
-    id_alcool = "1J3JM5V4DiMelidNnytF4sMKs25GqXYau"
-    id_fumo = "1iIqRaZApGUhc5upi4K22orFA7B1UGny-"
+    id_scaler = "1s-GwqlpPLhabVr6_KJFKiIjGWAqLImsS"
+    id_alcool = "1lBL5GDhAQGXDk8rcYjt-0AJ2VXBLbCE3"
+    id_fumo = "1AV-hIs52JKQec01hh0pWY7L_aCLhSw8H"
     # -----------------------------------------------------------
 
     try:
