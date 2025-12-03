@@ -1,0 +1,174 @@
+# 🩺 Health Risk AI - Health Habits Prediction
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Streamlit](https://img.shields.io/badge/Streamlit-App-ff4b4b)
+![Scikit-Learn](https://img.shields.io/badge/ML-Scikit--Learn-orange)
+![Status](https://img.shields.io/badge/Status-Complete-success)
+
+Welcome to the **Health Risk AI** repository! 🚀
+
+This is a **Data Science and Machine Learning** project developed to predict health habits (alcohol consumption and smoking) based on clinical exams and body measurements. The goal is to demonstrate how Artificial Intelligence can assist in identifying risk profiles quickly and intuitively.
+
+---
+
+## 🎯 What does this project do?
+
+The application works as a screening tool. It receives patient data (such as age, weight, cholesterol, blood tests) and uses Artificial Intelligence models to answer two main questions:
+
+1. 🍺 **Does this person have a tendency to consume alcohol?** (Yes/No)
+2. 🚬 **What is the smoking profile?** (Non-smoker / Ex-smoker / Active Smoker)
+
+All presented through a modern, interactive, and user-friendly web interface.
+
+---
+
+## 🛠️ Technologies Used
+
+This project was built 100% in Python, using the following libraries:
+
+* **[Pandas](https://pandas.pydata.org/):** For tabular data manipulation and structuring.
+* **[Scikit-learn](https://scikit-learn.org/):** The heart of the AI. Used to create, train, and validate Machine Learning models (Random Forest).
+* **[Streamlit](https://streamlit.io/):** Amazing framework to turn data scripts into shareable web apps in minutes.
+* **[Joblib](https://joblib.readthedocs.io/):** Essential for saving trained models (`.pkl`) and loading them instantly in the app.
+* **[Numpy](https://numpy.org/):** For mathematical calculations and array support.
+
+---
+
+## 🧠 How was the AI built?
+
+The "brain" of this project was trained with a real dataset containing thousands of health exam records. The development pipeline followed these steps:
+
+1. **Training (Google Colab):**
+   * **Cleaning:** Handling null values and inconsistent data.
+   * **Leakage Prevention:** Removal of columns that could give away the answer to the model (*data leakage*).
+   * **Modeling:** Training a **Random Forest Classifier** algorithm, chosen for its robustness and high accuracy on tabular data.
+
+2. **Application (Local):**
+   * Exporting trained models to `.pkl` files.
+   * Developing the Frontend with Streamlit for real-time model consumption.
+
+---
+
+## 📊 Input Features
+
+The application accepts 22 clinical features from the patient:
+
+### 👤 Demographics and Anthropometry
+- Sex (Male/Female)
+- Age
+- Height (cm)
+- Weight (kg)
+- Waist circumference (cm)
+
+### 👁️ Senses and Vital Signs
+- Vision (left and right eye)
+- Hearing (left and right ear)
+- Systolic blood pressure (SBP)
+- Diastolic blood pressure (DBP)
+- Fasting glucose (mg/dL)
+
+### 🩸 Lipid Panel and Hematology
+- Total cholesterol (mg/dL)
+- HDL cholesterol (mg/dL)
+- LDL cholesterol (mg/dL)
+- Triglycerides (mg/dL)
+- Hemoglobin (g/dL)
+- Urine protein
+
+### 🧪 Liver and Kidney Function
+- Serum creatinine
+- AST (SGOT)
+- ALT (SGPT)
+- Gamma GTP (important indicator for alcohol consumption)
+
+---
+
+## 🚀 How to run the project on your machine
+
+Follow the steps below to test the project on your own computer:
+
+### 1. Prerequisites
+Make sure you have [Python 3.8+](https://www.python.org/) installed on your machine.
+
+### 2. File Structure
+The project has the following structure:
+
+```
+health-ia/
+├── app.py                    # Streamlit Application
+├── requirements.txt          # Project Dependencies
+├── README.md                # This file
+└── model_data/              # Directory with trained models
+    ├── scaler.pkl           # Data normalizer
+    ├── modelo_alcool.pkl    # Alcohol prediction model
+    └── modelo_fumo.pkl      # Smoking prediction model
+```
+
+### 3. Installing Dependencies
+
+Open your terminal in the project folder and install the required libraries:
+
+```bash
+pip install -r requirements.txt
+```
+
+Or install manually:
+
+```bash
+pip install streamlit scikit-learn joblib pandas numpy
+```
+
+### 4. Run the App
+
+In the terminal, execute:
+
+```bash
+streamlit run app.py
+```
+
+The browser will automatically open at `http://localhost:8501`.
+
+---
+
+## 🎨 Application Interface
+
+The Streamlit interface has:
+
+- **Sidebar:** Information about the model and medical disclaimer
+- **Interactive Form:** Fields organized by category for clinical data entry
+- **Results Panel:** Clear display of alcohol and smoking predictions with intuitive colors and icons
+
+---
+
+## 📈 Model Accuracy
+
+The models were trained with **Random Forest Classifier** algorithm and present:
+
+* **Approximate Accuracy:** ~99% (on synthetic tests)
+* **Most Important Variables:** Gamma GTP, age, hemoglobin, HDL cholesterol
+
+---
+
+## ⚠️ Disclaimer
+
+This project is **exclusively for educational purposes** and Machine Learning study. The predictions generated by the AI **do not replace professional medical diagnosis**. Always consult a qualified healthcare professional for health-related matters.
+
+---
+
+## 🤝 Contributions
+
+Feel free to:
+- Report bugs
+- Suggest improvements
+- Fork the project
+- Submit pull requests
+
+---
+
+## 📝 License
+
+Project developed for academic and learning purposes.
+
+---
+
+**Developed with ❤️ using Python and Streamlit**
